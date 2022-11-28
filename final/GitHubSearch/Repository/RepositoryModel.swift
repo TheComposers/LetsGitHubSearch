@@ -16,8 +16,9 @@ extension RepositoryModel {
   static let mock = Self(
     items: [
       RepositoryModel.Result(name: "Swift"),
-      RepositoryModel.Result(name: "SwiftLint"),
-      RepositoryModel.Result(name: "SwiftAlgorithm")
+      RepositoryModel.Result(name: "SwiftyJSON"),
+      RepositoryModel.Result(name: "SwiftGuide"),
+      RepositoryModel.Result(name: "SwiftterSwift")
     ]
   )
 }

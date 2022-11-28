@@ -26,9 +26,16 @@ struct RepoSearchView: View {
           }
           .padding()
 
-          List {
-            ForEach(viewStore.searchResults, id: \.self) {
-              Text($0)
+          Group {
+            if(viewStore.isLoading) {
+              ProgressView()
+              Spacer()
+            } else {
+              List {
+                ForEach(viewStore.searchResults, id: \.self) { repo in
+                  Text(repo)
+                }
+              }
             }
           }
         }
