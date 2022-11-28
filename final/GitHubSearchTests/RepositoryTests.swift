@@ -13,17 +13,17 @@ final class RepositoryTests: XCTestCase {
     )
     store.dependencies.repoSearchClient.search = { _ in .mock }
 
-    await store.send(.keywordChanged("Swift")) { store in
-      store.keyword = "Swift"
+    await store.send(.keywordChanged("Swift")) {
+      $0.keyword = "Swift"
     }
 
-    await store.send(.search) { store in
-      store.isLoading = true
+    await store.send(.search) {
+      $0.isLoading = true
     }
 
-    await store.receive(.dataLoaded(.success(.mock))) { store in
-      store.isLoading = false
-      store.searchResults = [
+    await store.receive(.dataLoaded(.success(.mock))) {
+      $0.isLoading = false
+      $0.searchResults = [
         "Swift",
         "SwiftyJSON",
         "SwiftGuide",
