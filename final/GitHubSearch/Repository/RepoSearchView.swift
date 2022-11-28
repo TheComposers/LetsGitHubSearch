@@ -8,37 +8,28 @@ struct RepoSearchView: View {
   var body: some View {
     WithViewStore(self.store) { viewStore in
       NavigationView {
-        VStack {
-          HStack {
-            TextField(
-              "Search repo",
-              text: Binding(
-                get: { viewStore.keyword },
-                set: { viewStore.send(.keywordChanged($0)) }
-              )
-            )
-            .textFieldStyle(.roundedBorder)
+        Group {
+          Text("\(viewStore.requestCount)")
+          Spacer()
 
-            Button("Search") {
-              viewStore.send(.search)
-            }
-            .buttonStyle(.borderedProminent)
-          }
-          .padding()
-
-          Group {
-            if(viewStore.isLoading) {
-              ProgressView()
-              Spacer()
-            } else {
-              List {
-                ForEach(viewStore.searchResults, id: \.self) { repo in
-                  Text(repo)
-                }
+          if(viewStore.isLoading) {
+            ProgressView()
+          } else {
+            List {
+              ForEach(viewStore.searchResults, id: \.self) { repo in
+                Text(repo)
               }
             }
           }
+
+          Spacer()
         }
+        .searchable(
+          text: Binding(
+            get: { viewStore.keyword },
+            set: { viewStore.send(.keywordChanged($0)) }
+          )
+        )
         .navigationTitle("Github Search")
       }
     }
