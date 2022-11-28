@@ -27,7 +27,7 @@ struct RepoSearch: ReducerProtocol {
       if keyword == "" {
         state.isLoading = false
         state.searchResults = []
-        return .none
+        return .cancel(id: SearchDebounceId.self)
       }
 
       return .run { send in
