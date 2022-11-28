@@ -25,8 +25,9 @@ final class RepositoryTests: XCTestCase {
       store.isLoading = false
       store.searchResults = [
         "Swift",
-        "SwiftLint",
-        "SwiftAlgorithm"
+        "SwiftyJSON",
+        "SwiftGuide",
+        "SwiftterSwift",
       ]
     }
   }
