@@ -11,6 +11,7 @@ final class RepositoryTests: XCTestCase {
       initialState: RepoSearch.State(),
       reducer: RepoSearch()
     )
+
     store.dependencies.repoSearchClient.search = { _ in .mock }
 
     await store.send(.keywordChanged("Swift")) {
