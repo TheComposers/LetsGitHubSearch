@@ -6,7 +6,7 @@ struct RepoSearchView: View {
   let store: StoreOf<RepoSearch>
 
   var body: some View {
-    WithViewStore(store) { viewStore in
+    WithViewStore(self.store) { viewStore in
       NavigationView {
         VStack {
           HStack {
