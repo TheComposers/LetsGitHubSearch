@@ -19,6 +19,13 @@ struct RepoSearch: ReducerProtocol {
     switch action {
     case let .keywordChanged(keyword):
       state.keyword = keyword
+
+      if keyword == "" {
+        state.isLoading = false
+        state.searchResults = []
+        return .none
+      }
+
       return .run { send in
         await send(.search)
       }
