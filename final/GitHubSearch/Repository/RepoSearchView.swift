@@ -21,6 +21,8 @@ struct RepoSearchView: View {
               }
             }
           }
+
+          Spacer()
         }
         .searchable(
           text: Binding(

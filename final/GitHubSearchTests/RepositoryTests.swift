@@ -13,13 +13,15 @@ final class RepositoryTests: XCTestCase {
     )
 
     store.dependencies.repoSearchClient.search = { _ in .mock }
+    store.dependencies.continuousClock = ImmediateClock()
 
     await store.send(.keywordChanged("Swift")) {
       $0.keyword = "Swift"
     }
 
-    await store.send(.search) {
+    await store.receive(.search) {
       $0.isLoading = true
+      $0.requestCount = 1
     }
 
     await store.receive(.dataLoaded(.success(.mock))) {
