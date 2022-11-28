@@ -9,6 +9,8 @@ struct RepoSearchView: View {
     WithViewStore(self.store) { viewStore in
       NavigationView {
         Group {
+          Text("\(viewStore.requestCount)")
+
           if(viewStore.isLoading) {
             ProgressView()
           } else {
