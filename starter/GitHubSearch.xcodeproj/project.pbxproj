@@ -86,9 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				ECC8142729334ADF0038A09F /* GitHubSearchApp.swift */,
+				EC4BC238293463F4001B2F91 /* APIError.swift */,
 				ECC8145729334C6B0038A09F /* Repository */,
 				ECC8145129334AFC0038A09F /* Resources */,
-				EC4BC238293463F4001B2F91 /* APIError.swift */,
 			);
 			path = GitHubSearch;
 			sourceTree = "<group>";
