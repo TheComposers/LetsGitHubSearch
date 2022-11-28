@@ -19,7 +19,9 @@ struct RepoSearch: ReducerProtocol {
     switch action {
     case let .keywordChanged(keyword):
       state.keyword = keyword
-      return .none
+      return .run { send in
+        await send(.search)
+      }
 
     case .search:
       state.isLoading = true

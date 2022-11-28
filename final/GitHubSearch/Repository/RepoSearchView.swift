@@ -11,7 +11,6 @@ struct RepoSearchView: View {
         Group {
           if(viewStore.isLoading) {
             ProgressView()
-            Spacer()
           } else {
             List {
               ForEach(viewStore.searchResults, id: \.self) { repo in
