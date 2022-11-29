@@ -1,3 +1,5 @@
+import Foundation
+
 import ComposableArchitecture
 
 struct RepoSearch: ReducerProtocol {
@@ -13,9 +15,9 @@ struct RepoSearch: ReducerProtocol {
 
   func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
     // TODO: 각각의 Action이 발생했을 때 상태는 어떻게 변화해야 하는가?
-    // switch action {
-    //   case let .keywordChanged(keyword):
-    //   case .search:
-    //}
+//    switch action {
+//    case let .keywordChanged(keyword):
+//    case .search:
+//    }
   }
 }

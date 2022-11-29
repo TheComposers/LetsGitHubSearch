@@ -42,7 +42,7 @@ extension RepoSearchClient: TestDependencyKey {
 //
 //func sampleSearchRequest(keyword: String, send: Send<RepoSearch.Action>) async throws {
 //  guard let url = URL(string: "https://api.github.com/search/repositories?q=\(keyword)") else {
-//    await send(RepoSearch.Action.dataLoaded(.failure(APIError.invalidUrlError)))
+//    await send(RepoSearch.Action.dataLoaded(.failure(APIError.invalidURL)))
 //    return
 //  }
 //  let (data, _) = try await URLSession.shared.data(from: url)
