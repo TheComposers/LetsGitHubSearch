@@ -8,7 +8,7 @@ struct RepoSearch: ReducerProtocol {
     var requestCount = 0
   }
 
-  enum Action: BindableAction {
+  enum Action: Equatable, BindableAction {
     case binding(BindingAction<State>)
     case search
     case dataLoaded(TaskResult<RepositoryModel>)

@@ -15,7 +15,7 @@ final class RepositoryTests: XCTestCase {
     store.dependencies.repoSearchClient.search = { _ in .mock }
     store.dependencies.continuousClock = ImmediateClock()
 
-    await store.send(.keywordChanged("Swift")) {
+    await store.send(.set(\.$keyword, "Swift")) {
       $0.keyword = "Swift"
     }
 
@@ -46,13 +46,14 @@ final class RepositoryTests: XCTestCase {
     let clock = TestClock()
     store.dependencies.continuousClock = clock
 
-    await store.send(.keywordChanged("Swift")) {
+    await store.send(.set(\.$keyword, "Swift")) {
       $0.keyword = "Swift"
     }
 
+
     await clock.advance(by: .seconds(0.3))
 
-    await store.send(.keywordChanged("")) {
+    await store.send(.set(\.$keyword, "")) {
       $0.keyword = ""
       $0.requestCount = 0
       $0.isLoading = false
