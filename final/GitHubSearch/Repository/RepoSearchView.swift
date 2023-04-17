@@ -21,15 +21,9 @@ struct RepoSearchView: View {
               }
             }
           }
-
           Spacer()
         }
-        .searchable(
-          text: Binding(
-            get: { viewStore.keyword },
-            set: { viewStore.send(.keywordChanged($0)) }
-          )
-        )
+        .searchable(text: viewStore.binding(\.$keyword))
         .navigationTitle("Github Search")
       }
     }
