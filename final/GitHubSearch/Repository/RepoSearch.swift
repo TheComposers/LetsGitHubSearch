@@ -45,7 +45,7 @@ struct RepoSearch: ReducerProtocol {
 
       case let .dataLoaded(.success(repositoryModel)):
         state.isLoading = false
-        state.searchResults = repositoryModel.items.map { $0.name }
+        state.searchResults = repositoryModel.items.map { $0.fullname }
         return .none
 
       case .dataLoaded(.failure):

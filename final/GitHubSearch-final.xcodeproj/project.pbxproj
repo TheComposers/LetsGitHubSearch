@@ -22,6 +22,12 @@
 		FFFF0B6929EEB185005830E8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B6829EEB185005830E8 /* RootView.swift */; };
 		FFFF0B6B29EEB1EC005830E8 /* StargazerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B6A29EEB1EC005830E8 /* StargazerView.swift */; };
 		FFFF0B6E29EEB278005830E8 /* RepoSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B6D29EEB278005830E8 /* RepoSearchRow.swift */; };
+		FFFF0B7029EEB423005830E8 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFFF0B6F29EEB423005830E8 /* Secrets.xcconfig */; };
+		FFFF0B7329EEB4F1005830E8 /* RepoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B7229EEB4F1005830E8 /* RepoDetailView.swift */; };
+		FFFF0B7529EEB54F005830E8 /* RepoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B7429EEB54F005830E8 /* RepoDetail.swift */; };
+		FFFF0B7729EEB5DC005830E8 /* RepoDetailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B7629EEB5DC005830E8 /* RepoDetailClient.swift */; };
+		FFFF0B7929EEB70C005830E8 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B7829EEB70C005830E8 /* AppConfig.swift */; };
+		FFFF0B7B29EEB7AE005830E8 /* RepositoryDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B7A29EEB7AE005830E8 /* RepositoryDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,13 @@
 		FFFF0B6829EEB185005830E8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FFFF0B6A29EEB1EC005830E8 /* StargazerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerView.swift; sourceTree = "<group>"; };
 		FFFF0B6D29EEB278005830E8 /* RepoSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSearchRow.swift; sourceTree = "<group>"; };
+		FFFF0B6F29EEB423005830E8 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = SOURCE_ROOT; };
+		FFFF0B7129EEB43B005830E8 /* GitHubSearch-final-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GitHubSearch-final-Info.plist"; sourceTree = "<group>"; };
+		FFFF0B7229EEB4F1005830E8 /* RepoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailView.swift; sourceTree = "<group>"; };
+		FFFF0B7429EEB54F005830E8 /* RepoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetail.swift; sourceTree = "<group>"; };
+		FFFF0B7629EEB5DC005830E8 /* RepoDetailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailClient.swift; sourceTree = "<group>"; };
+		FFFF0B7829EEB70C005830E8 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		FFFF0B7A29EEB7AE005830E8 /* RepositoryDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +88,7 @@
 		ECC8141B29334ADF0038A09F = {
 			isa = PBXGroup;
 			children = (
+				FFFF0B7129EEB43B005830E8 /* GitHubSearch-final-Info.plist */,
 				ECC8142629334ADF0038A09F /* GitHubSearch */,
 				ECC8143729334AE00038A09F /* GitHubSearchTests */,
 				ECC8142529334ADF0038A09F /* Products */,
@@ -93,10 +107,12 @@
 		ECC8142629334ADF0038A09F /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				FFFF0B6F29EEB423005830E8 /* Secrets.xcconfig */,
 				ECC8142729334ADF0038A09F /* GitHubSearchApp.swift */,
 				EC4BC238293463F4001B2F91 /* APIError.swift */,
 				FFFF0B4A29ED3F49005830E8 /* LoadingState.swift */,
 				FFFF0B6829EEB185005830E8 /* RootView.swift */,
+				FFFF0B7829EEB70C005830E8 /* AppConfig.swift */,
 				FFFF0B6729EEB169005830E8 /* Stargazer */,
 				ECC8145729334C6B0038A09F /* Repository */,
 				FFFF0B6C29EEB261005830E8 /* RepositoryDetail */,
@@ -153,6 +169,10 @@
 		FFFF0B6C29EEB261005830E8 /* RepositoryDetail */ = {
 			isa = PBXGroup;
 			children = (
+				FFFF0B7229EEB4F1005830E8 /* RepoDetailView.swift */,
+				FFFF0B7429EEB54F005830E8 /* RepoDetail.swift */,
+				FFFF0B7629EEB5DC005830E8 /* RepoDetailClient.swift */,
+				FFFF0B7A29EEB7AE005830E8 /* RepositoryDetailModel.swift */,
 			);
 			path = RepositoryDetail;
 			sourceTree = "<group>";
@@ -247,6 +267,7 @@
 			files = (
 				ECC8142F29334AE00038A09F /* Preview Assets.xcassets in Resources */,
 				ECC8142C29334AE00038A09F /* Assets.xcassets in Resources */,
+				FFFF0B7029EEB423005830E8 /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,16 +285,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFFF0B7729EEB5DC005830E8 /* RepoDetailClient.swift in Sources */,
 				FFFF0B6929EEB185005830E8 /* RootView.swift in Sources */,
 				ECC8145C29334CB70038A09F /* RepoSearchClient.swift in Sources */,
+				FFFF0B7929EEB70C005830E8 /* AppConfig.swift in Sources */,
 				FFFF0B6B29EEB1EC005830E8 /* StargazerView.swift in Sources */,
 				FFFF0B4B29ED3F49005830E8 /* LoadingState.swift in Sources */,
+				FFFF0B7329EEB4F1005830E8 /* RepoDetailView.swift in Sources */,
 				ECC8145E29334CB70038A09F /* RepositoryModel.swift in Sources */,
 				ECC8142829334ADF0038A09F /* GitHubSearchApp.swift in Sources */,
 				ECC8145F29334CB70038A09F /* RepoSearchView.swift in Sources */,
+				FFFF0B7529EEB54F005830E8 /* RepoDetail.swift in Sources */,
 				ECC8145D29334CB70038A09F /* RepoSearch.swift in Sources */,
 				FFFF0B6E29EEB278005830E8 /* RepoSearchRow.swift in Sources */,
 				EC4BC239293463F4001B2F91 /* APIError.swift in Sources */,
+				FFFF0B7B29EEB7AE005830E8 /* RepositoryDetailModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +324,7 @@
 /* Begin XCBuildConfiguration section */
 		ECC8144629334AE00038A09F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFFF0B6F29EEB423005830E8 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -421,6 +448,7 @@
 				DEVELOPMENT_TEAM = 8B27K52UU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GitHubSearch-final-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +482,7 @@
 				DEVELOPMENT_TEAM = 8B27K52UU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GitHubSearch-final-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -17,7 +17,17 @@ struct RepoSearchView: View {
           } else {
             List {
               ForEach(viewStore.searchResults, id: \.self) { repo in
-                Text(repo)
+                NavigationLink(
+                  destination: {
+                    RepoDetailView(
+                      store: Store(
+                        initialState: RepoDetail.State(fullname: repo),
+                        reducer: RepoDetail()
+                      )
+                    )
+                }, label: {
+                  RepoSearchRow(fullname: repo)
+                })
               }
             }
           }
