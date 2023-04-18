@@ -8,8 +8,13 @@ struct RepoDetailView: View {
   var body: some View {
     WithViewStore(store) { viewStore in
       VStack {
-        Text(viewStore.fullname)
-        Text(viewStore.searchResult)
+        if let result = viewStore.searchResult {
+          Text(result.fullname)
+          Text(result.ownerName)
+          Text(result.ownerUserThumbnail)
+          Text("\(result.starCount)")
+          Text("\(result.forkCount)")
+        }
       }
       .task {
         viewStore.send(.loadRepoDetail)

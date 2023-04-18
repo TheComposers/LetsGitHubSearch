@@ -5,7 +5,7 @@ import ComposableArchitecture
 struct RepoDetail: ReducerProtocol {
   struct State: Equatable {
     let fullname: String
-    var searchResult = ""
+    var searchResult: RepositoryDetailModel?
     var isLoading = false
   }
 
@@ -25,7 +25,7 @@ struct RepoDetail: ReducerProtocol {
           await send(.dataLoaded(result))
         }
       case let .dataLoaded(.success(result)):
-        state.searchResult = result.fullname
+        state.searchResult = result
         return .none
 
       case .dataLoaded(.failure):
