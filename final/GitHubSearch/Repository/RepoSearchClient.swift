@@ -19,7 +19,9 @@ extension DependencyValues {
 extension RepoSearchClient: DependencyKey {
   static let liveValue = RepoSearchClient(
     search: { keyword in
-      guard let url = URL(string: "https://api.github.com/search/repositories?q=\(keyword)") else {
+      let path = APIEndpoints.baseURL + APIEndpoints.repoSearch + keyword
+      guard let encodedPath = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+        let url = URL(string: encodedPath) else {
         throw APIError.invalidURL
       }
       let (data, _) = try await URLSession.shared.data(from: url)

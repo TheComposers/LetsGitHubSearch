@@ -15,10 +15,15 @@ struct RootView: View {
         Text("Search")
       }
 
-      StargazerView()
-        .tabItem {
-          Text("Star")
-        }
+      StargazerView(
+        store: Store(
+          initialState: Stargazer.State(),
+          reducer: Stargazer()
+        )
+      )
+      .tabItem {
+        Text("Star")
+      }
     }
   }
 }
