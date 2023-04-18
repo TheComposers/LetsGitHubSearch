@@ -30,6 +30,7 @@
 		FF11D23229EECC5400AC0412 /* URLResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D23129EECC5400AC0412 /* URLResponse+Extensions.swift */; };
 		FF11D23429EECC5D00AC0412 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D23329EECC5D00AC0412 /* Data+Extensions.swift */; };
 		FF11D23629EECC6A00AC0412 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D23529EECC6A00AC0412 /* HTTPError.swift */; };
+		FF11D23B29EED17C00AC0412 /* StargazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D23A29EED17C00AC0412 /* StargazerTests.swift */; };
 		FFFF0B4B29ED3F49005830E8 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B4A29ED3F49005830E8 /* LoadingState.swift */; };
 		FFFF0B6929EEB185005830E8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B6829EEB185005830E8 /* RootView.swift */; };
 		FFFF0B6B29EEB1EC005830E8 /* StargazerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B6A29EEB1EC005830E8 /* StargazerView.swift */; };
@@ -79,6 +80,7 @@
 		FF11D23129EECC5400AC0412 /* URLResponse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+Extensions.swift"; sourceTree = "<group>"; };
 		FF11D23329EECC5D00AC0412 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		FF11D23529EECC6A00AC0412 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		FF11D23A29EED17C00AC0412 /* StargazerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerTests.swift; sourceTree = "<group>"; };
 		FFFF0B4A29ED3F49005830E8 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		FFFF0B6829EEB185005830E8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FFFF0B6A29EEB1EC005830E8 /* StargazerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				ECC8143829334AE00038A09F /* RepositoryTests.swift */,
 				FFFF0B7C29EEBD9D005830E8 /* RepositoryDetailTests.swift */,
+				FF11D23A29EED17C00AC0412 /* StargazerTests.swift */,
 			);
 			path = GitHubSearchTests;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			files = (
 				FFFF0B7D29EEBD9D005830E8 /* RepositoryDetailTests.swift in Sources */,
 				ECC8143929334AE00038A09F /* RepositoryTests.swift in Sources */,
+				FF11D23B29EED17C00AC0412 /* StargazerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
