@@ -12,7 +12,7 @@ struct RepoSearchView: View {
           Text("\(viewStore.requestCount)")
           Spacer()
 
-          if(viewStore.isLoading) {
+          if(viewStore.loadingState == .loading) {
             ProgressView()
           } else {
             List {

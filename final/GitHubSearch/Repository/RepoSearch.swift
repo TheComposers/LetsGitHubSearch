@@ -4,7 +4,7 @@ struct RepoSearch: ReducerProtocol {
   struct State: Equatable {
     @BindingState var keyword = ""
     var searchResults = [String]()
-    var isLoading = false
+    var loadingState = LoadingState.initial
     var requestCount = 0
   }
 
@@ -24,7 +24,7 @@ struct RepoSearch: ReducerProtocol {
       switch action {
       case .binding(\.$keyword):
         if state.keyword == "" {
-          state.isLoading = false
+          state.loadingState = .initial
           state.searchResults = []
           return .cancel(id: SearchDebounceId.self)
         }
@@ -36,7 +36,7 @@ struct RepoSearch: ReducerProtocol {
         .cancellable(id: SearchDebounceId.self, cancelInFlight: true)
 
       case .search:
-        state.isLoading = true
+        state.loadingState = .loading
         state.requestCount += 1
         return EffectTask.run { [keyword = state.keyword] send in
           let result = await TaskResult { try await repoSearchClient.search(keyword) }
@@ -44,12 +44,12 @@ struct RepoSearch: ReducerProtocol {
         }
 
       case let .dataLoaded(.success(repositoryModel)):
-        state.isLoading = false
+        state.loadingState = .loaded
         state.searchResults = repositoryModel.items.map { $0.fullname }
         return .none
 
       case .dataLoaded(.failure):
-        state.isLoading = false
+        state.loadingState = .failed
         state.searchResults = []
         return .none
 

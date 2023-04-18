@@ -32,3 +32,12 @@ extension RepoDetailClient: DependencyKey {
     }
   )
 }
+
+extension RepoDetailClient: TestDependencyKey {
+  static let previewValue = RepoDetailClient(
+    loadRepoDetail: { _ in return .mock }
+  )
+  static let testValue = Self(
+    loadRepoDetail: unimplemented("\(Self.self).loadRepoDetail")
+  )
+}

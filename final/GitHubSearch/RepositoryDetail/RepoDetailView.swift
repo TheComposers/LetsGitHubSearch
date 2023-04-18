@@ -8,12 +8,16 @@ struct RepoDetailView: View {
   var body: some View {
     WithViewStore(store) { viewStore in
       VStack {
-        if let result = viewStore.searchResult {
-          Text(result.fullname)
-          Text(result.ownerName)
-          Text(result.ownerUserThumbnail)
-          Text("\(result.starCount)")
-          Text("\(result.forkCount)")
+        if viewStore.loadingState == .loading {
+          ProgressView()
+        } else {
+          if let result = viewStore.searchResult {
+            Text(result.fullname)
+            Text(result.ownerName)
+            Text(result.ownerUserThumbnail)
+            Text("\(result.starCount)")
+            Text("\(result.forkCount)")
+          }
         }
       }
       .task {

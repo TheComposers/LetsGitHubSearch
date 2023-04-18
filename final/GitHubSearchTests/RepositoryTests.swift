@@ -20,12 +20,12 @@ final class RepositoryTests: XCTestCase {
     }
 
     await store.receive(.search) {
-      $0.isLoading = true
+      $0.loadingState = .loading
       $0.requestCount = 1
     }
 
     await store.receive(.dataLoaded(.success(.mock))) {
-      $0.isLoading = false
+      $0.loadingState = .loaded
       $0.searchResults = [
         "Swift",
         "SwiftyJSON",
@@ -50,13 +50,12 @@ final class RepositoryTests: XCTestCase {
       $0.keyword = "Swift"
     }
 
-
     await clock.advance(by: .seconds(0.3))
 
     await store.send(.set(\.$keyword, "")) {
       $0.keyword = ""
       $0.requestCount = 0
-      $0.isLoading = false
+      $0.loadingState = .initial
       $0.searchResults = []
     }
   }
