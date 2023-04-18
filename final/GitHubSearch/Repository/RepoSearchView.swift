@@ -25,9 +25,10 @@ struct RepoSearchView: View {
                         reducer: RepoDetail()
                       )
                     )
-                }, label: {
-                  RepoSearchRow(fullname: repo)
-                })
+                  }, label: {
+                    RepoSearchRow(fullname: repo)
+                  }
+                )
               }
             }
           }

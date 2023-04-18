@@ -5,5 +5,4 @@ struct StargazerListModel: Sendable, Decodable, Equatable {
   enum CodingKeys: String, CodingKey {
     case fullname = "full_name"
   }
-  
 }

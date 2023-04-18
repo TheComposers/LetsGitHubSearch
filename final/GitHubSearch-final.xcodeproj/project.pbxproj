@@ -19,6 +19,17 @@
 		ECC8145E29334CB70038A09F /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8145A29334CB70038A09F /* RepositoryModel.swift */; };
 		ECC8145F29334CB70038A09F /* RepoSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8145B29334CB70038A09F /* RepoSearchView.swift */; };
 		FF11D21E29EEC4F700AC0412 /* StargazerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D21D29EEC4F700AC0412 /* StargazerClient.swift */; };
+		FF11D22029EECA9C00AC0412 /* HTTPClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D21F29EECA9C00AC0412 /* HTTPClientProtocol.swift */; };
+		FF11D22229EECAD200AC0412 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22129EECAD200AC0412 /* HTTPMethod.swift */; };
+		FF11D22429EECB5A00AC0412 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22329EECB5A00AC0412 /* HTTPClient.swift */; };
+		FF11D22629EECB6500AC0412 /* LiveHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22529EECB6500AC0412 /* LiveHTTPClient.swift */; };
+		FF11D22929EECBB000AC0412 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = FF11D22829EECBB000AC0412 /* Factory */; };
+		FF11D22B29EECBDC00AC0412 /* FactoryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22A29EECBDC00AC0412 /* FactoryContainer.swift */; };
+		FF11D22D29EECBFC00AC0412 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22C29EECBFC00AC0412 /* URLSessionProtocol.swift */; };
+		FF11D23029EECC1F00AC0412 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22F29EECC1F00AC0412 /* String+Extensions.swift */; };
+		FF11D23229EECC5400AC0412 /* URLResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D23129EECC5400AC0412 /* URLResponse+Extensions.swift */; };
+		FF11D23429EECC5D00AC0412 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D23329EECC5D00AC0412 /* Data+Extensions.swift */; };
+		FF11D23629EECC6A00AC0412 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D23529EECC6A00AC0412 /* HTTPError.swift */; };
 		FFFF0B4B29ED3F49005830E8 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B4A29ED3F49005830E8 /* LoadingState.swift */; };
 		FFFF0B6929EEB185005830E8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B6829EEB185005830E8 /* RootView.swift */; };
 		FFFF0B6B29EEB1EC005830E8 /* StargazerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B6A29EEB1EC005830E8 /* StargazerView.swift */; };
@@ -58,6 +69,16 @@
 		ECC8145A29334CB70038A09F /* RepositoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		ECC8145B29334CB70038A09F /* RepoSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSearchView.swift; sourceTree = "<group>"; };
 		FF11D21D29EEC4F700AC0412 /* StargazerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerClient.swift; sourceTree = "<group>"; };
+		FF11D21F29EECA9C00AC0412 /* HTTPClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientProtocol.swift; sourceTree = "<group>"; };
+		FF11D22129EECAD200AC0412 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		FF11D22329EECB5A00AC0412 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		FF11D22529EECB6500AC0412 /* LiveHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveHTTPClient.swift; sourceTree = "<group>"; };
+		FF11D22A29EECBDC00AC0412 /* FactoryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryContainer.swift; sourceTree = "<group>"; };
+		FF11D22C29EECBFC00AC0412 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		FF11D22F29EECC1F00AC0412 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		FF11D23129EECC5400AC0412 /* URLResponse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+Extensions.swift"; sourceTree = "<group>"; };
+		FF11D23329EECC5D00AC0412 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		FF11D23529EECC6A00AC0412 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		FFFF0B4A29ED3F49005830E8 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		FFFF0B6829EEB185005830E8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FFFF0B6A29EEB1EC005830E8 /* StargazerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerView.swift; sourceTree = "<group>"; };
@@ -80,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF11D22929EECBB000AC0412 /* Factory in Frameworks */,
 				ECC8145429334C590038A09F /* ComposableArchitecture in Frameworks */,
 				ECC8145629334C590038A09F /* Dependencies in Frameworks */,
 			);
@@ -119,11 +141,13 @@
 			children = (
 				FFFF0B6F29EEB423005830E8 /* Secrets.xcconfig */,
 				ECC8142729334ADF0038A09F /* GitHubSearchApp.swift */,
-				EC4BC238293463F4001B2F91 /* APIError.swift */,
+				FF11D22A29EECBDC00AC0412 /* FactoryContainer.swift */,
 				FFFF0B4A29ED3F49005830E8 /* LoadingState.swift */,
+				FF11D22C29EECBFC00AC0412 /* URLSessionProtocol.swift */,
 				FFFF0B6829EEB185005830E8 /* RootView.swift */,
 				FFFF0B7829EEB70C005830E8 /* AppConfig.swift */,
-				FFFF0B7E29EEC1C8005830E8 /* APIEndpoints.swift */,
+				FF11D23729EECC8400AC0412 /* Network */,
+				FF11D22E29EECC1800AC0412 /* Extensions */,
 				FFFF0B6729EEB169005830E8 /* Stargazer */,
 				ECC8145729334C6B0038A09F /* Repository */,
 				FFFF0B6C29EEB261005830E8 /* RepositoryDetail */,
@@ -170,6 +194,46 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		FF11D22E29EECC1800AC0412 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF11D22F29EECC1F00AC0412 /* String+Extensions.swift */,
+				FF11D23129EECC5400AC0412 /* URLResponse+Extensions.swift */,
+				FF11D23329EECC5D00AC0412 /* Data+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF11D23729EECC8400AC0412 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF11D23829EECC9800AC0412 /* Errors */,
+				FF11D23929EECCA200AC0412 /* NetworkElements */,
+				FF11D21F29EECA9C00AC0412 /* HTTPClientProtocol.swift */,
+				FF11D22329EECB5A00AC0412 /* HTTPClient.swift */,
+				FF11D22529EECB6500AC0412 /* LiveHTTPClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FF11D23829EECC9800AC0412 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				EC4BC238293463F4001B2F91 /* APIError.swift */,
+				FF11D23529EECC6A00AC0412 /* HTTPError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		FF11D23929EECCA200AC0412 /* NetworkElements */ = {
+			isa = PBXGroup;
+			children = (
+				FFFF0B7E29EEC1C8005830E8 /* APIEndpoints.swift */,
+				FF11D22129EECAD200AC0412 /* HTTPMethod.swift */,
+			);
+			path = NetworkElements;
+			sourceTree = "<group>";
+		};
 		FFFF0B6729EEB169005830E8 /* Stargazer */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +275,7 @@
 			packageProductDependencies = (
 				ECC8145329334C590038A09F /* ComposableArchitecture */,
 				ECC8145529334C590038A09F /* Dependencies */,
+				FF11D22829EECBB000AC0412 /* Factory */,
 			);
 			productName = GitHubSearch;
 			productReference = ECC8142429334ADF0038A09F /* GitHubSearch-final.app */;
@@ -264,6 +329,7 @@
 			mainGroup = ECC8141B29334ADF0038A09F;
 			packageReferences = (
 				ECC8145229334C590038A09F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				FF11D22729EECBB000AC0412 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = ECC8142529334ADF0038A09F /* Products */;
 			projectDirPath = "";
@@ -300,16 +366,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF11D22029EECA9C00AC0412 /* HTTPClientProtocol.swift in Sources */,
+				FF11D23429EECC5D00AC0412 /* Data+Extensions.swift in Sources */,
+				FF11D23229EECC5400AC0412 /* URLResponse+Extensions.swift in Sources */,
 				FFFF0B7729EEB5DC005830E8 /* RepoDetailClient.swift in Sources */,
+				FF11D22229EECAD200AC0412 /* HTTPMethod.swift in Sources */,
 				FFFF0B6929EEB185005830E8 /* RootView.swift in Sources */,
+				FF11D23629EECC6A00AC0412 /* HTTPError.swift in Sources */,
 				ECC8145C29334CB70038A09F /* RepoSearchClient.swift in Sources */,
+				FF11D22D29EECBFC00AC0412 /* URLSessionProtocol.swift in Sources */,
 				FFFF0B7929EEB70C005830E8 /* AppConfig.swift in Sources */,
+				FF11D22429EECB5A00AC0412 /* HTTPClient.swift in Sources */,
 				FFFF0B6B29EEB1EC005830E8 /* StargazerView.swift in Sources */,
 				FFFF0B4B29ED3F49005830E8 /* LoadingState.swift in Sources */,
 				FFFF0B7329EEB4F1005830E8 /* RepoDetailView.swift in Sources */,
 				ECC8145E29334CB70038A09F /* RepositoryModel.swift in Sources */,
 				ECC8142829334ADF0038A09F /* GitHubSearchApp.swift in Sources */,
 				FFFF0B8129EEC3E3005830E8 /* Stargazer.swift in Sources */,
+				FF11D23029EECC1F00AC0412 /* String+Extensions.swift in Sources */,
 				ECC8145F29334CB70038A09F /* RepoSearchView.swift in Sources */,
 				FFFF0B7529EEB54F005830E8 /* RepoDetail.swift in Sources */,
 				FFFF0B7F29EEC1C8005830E8 /* APIEndpoints.swift in Sources */,
@@ -317,8 +391,10 @@
 				FFFF0B6E29EEB278005830E8 /* RepoSearchRow.swift in Sources */,
 				FF11D21E29EEC4F700AC0412 /* StargazerClient.swift in Sources */,
 				EC4BC239293463F4001B2F91 /* APIError.swift in Sources */,
+				FF11D22B29EECBDC00AC0412 /* FactoryContainer.swift in Sources */,
 				FFFF0B7B29EEB7AE005830E8 /* RepositoryDetailModel.swift in Sources */,
 				FFFF0B8329EEC46E005830E8 /* StargazerListModel.swift in Sources */,
+				FF11D22629EECB6500AC0412 /* LiveHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +688,14 @@
 				version = 0.52.0;
 			};
 		};
+		FF11D22729EECBB000AC0412 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -624,6 +708,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ECC8145229334C590038A09F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = Dependencies;
+		};
+		FF11D22829EECBB000AC0412 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF11D22729EECBB000AC0412 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

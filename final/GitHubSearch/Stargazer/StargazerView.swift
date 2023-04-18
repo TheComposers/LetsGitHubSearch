@@ -7,9 +7,22 @@ struct StargazerView: View {
 
   var body: some View {
     WithViewStore(store) { viewStore in
-      List {
-        ForEach(viewStore.searchResult, id: \.self) { repo in
-          Text(repo)
+      NavigationView {
+        List {
+          ForEach(viewStore.searchResult, id: \.self) { repo in
+            NavigationLink(
+              destination: {
+                RepoDetailView(
+                  store: Store(
+                    initialState: RepoDetail.State(fullname: repo),
+                    reducer: RepoDetail()
+                  )
+                )
+              }, label: {
+                RepoSearchRow(fullname: repo)
+              }
+            )
+          }
         }
       }
       .task {

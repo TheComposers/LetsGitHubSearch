@@ -19,13 +19,10 @@ extension DependencyValues {
 extension RepoSearchClient: DependencyKey {
   static let liveValue = RepoSearchClient(
     search: { keyword in
-      let path = APIEndpoints.baseURL + APIEndpoints.repoSearch + keyword
-      guard let encodedPath = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-        let url = URL(string: encodedPath) else {
-        throw APIError.invalidURL
-      }
-      let (data, _) = try await URLSession.shared.data(from: url)
-      return try JSONDecoder().decode(RepositoryModel.self, from: data)
+      let path = APIEndpoints.baseURL + APIEndpoints.repoSearch
+
+      return try await HTTPClient.liveValue
+        .request(method: .get, path, parameter: ["q": keyword], of: RepositoryModel.self)
     }
   )
 }
