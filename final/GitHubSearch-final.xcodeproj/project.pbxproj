@@ -19,6 +19,9 @@
 		ECC8145E29334CB70038A09F /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8145A29334CB70038A09F /* RepositoryModel.swift */; };
 		ECC8145F29334CB70038A09F /* RepoSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8145B29334CB70038A09F /* RepoSearchView.swift */; };
 		FFFF0B4B29ED3F49005830E8 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B4A29ED3F49005830E8 /* LoadingState.swift */; };
+		FFFF0B6929EEB185005830E8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B6829EEB185005830E8 /* RootView.swift */; };
+		FFFF0B6B29EEB1EC005830E8 /* StargazerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B6A29EEB1EC005830E8 /* StargazerView.swift */; };
+		FFFF0B6E29EEB278005830E8 /* RepoSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0B6D29EEB278005830E8 /* RepoSearchRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		ECC8145A29334CB70038A09F /* RepositoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		ECC8145B29334CB70038A09F /* RepoSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSearchView.swift; sourceTree = "<group>"; };
 		FFFF0B4A29ED3F49005830E8 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		FFFF0B6829EEB185005830E8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FFFF0B6A29EEB1EC005830E8 /* StargazerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerView.swift; sourceTree = "<group>"; };
+		FFFF0B6D29EEB278005830E8 /* RepoSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSearchRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +96,10 @@
 				ECC8142729334ADF0038A09F /* GitHubSearchApp.swift */,
 				EC4BC238293463F4001B2F91 /* APIError.swift */,
 				FFFF0B4A29ED3F49005830E8 /* LoadingState.swift */,
+				FFFF0B6829EEB185005830E8 /* RootView.swift */,
+				FFFF0B6729EEB169005830E8 /* Stargazer */,
 				ECC8145729334C6B0038A09F /* Repository */,
+				FFFF0B6C29EEB261005830E8 /* RepositoryDetail */,
 				ECC8145129334AFC0038A09F /* Resources */,
 			);
 			path = GitHubSearch;
@@ -125,11 +134,27 @@
 			isa = PBXGroup;
 			children = (
 				ECC8145B29334CB70038A09F /* RepoSearchView.swift */,
+				FFFF0B6D29EEB278005830E8 /* RepoSearchRow.swift */,
 				ECC8145929334CB70038A09F /* RepoSearch.swift */,
 				ECC8145829334CB70038A09F /* RepoSearchClient.swift */,
 				ECC8145A29334CB70038A09F /* RepositoryModel.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		FFFF0B6729EEB169005830E8 /* Stargazer */ = {
+			isa = PBXGroup;
+			children = (
+				FFFF0B6A29EEB1EC005830E8 /* StargazerView.swift */,
+			);
+			path = Stargazer;
+			sourceTree = "<group>";
+		};
+		FFFF0B6C29EEB261005830E8 /* RepositoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RepositoryDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,12 +264,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFFF0B6929EEB185005830E8 /* RootView.swift in Sources */,
 				ECC8145C29334CB70038A09F /* RepoSearchClient.swift in Sources */,
+				FFFF0B6B29EEB1EC005830E8 /* StargazerView.swift in Sources */,
 				FFFF0B4B29ED3F49005830E8 /* LoadingState.swift in Sources */,
 				ECC8145E29334CB70038A09F /* RepositoryModel.swift in Sources */,
 				ECC8142829334ADF0038A09F /* GitHubSearchApp.swift in Sources */,
 				ECC8145F29334CB70038A09F /* RepoSearchView.swift in Sources */,
 				ECC8145D29334CB70038A09F /* RepoSearch.swift in Sources */,
+				FFFF0B6E29EEB278005830E8 /* RepoSearchRow.swift in Sources */,
 				EC4BC239293463F4001B2F91 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
