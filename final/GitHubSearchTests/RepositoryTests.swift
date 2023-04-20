@@ -6,7 +6,7 @@ import ComposableArchitecture
 
 @MainActor
 final class RepositoryTests: XCTestCase {
-  func test_user_get_repo_search_results_when_search() async {
+  func test_get_repo_search_results_when_search() async {
     let store = TestStore(
       initialState: RepoSearch.State(),
       reducer: RepoSearch()
@@ -35,7 +35,7 @@ final class RepositoryTests: XCTestCase {
     }
   }
 
-  func test_user_get_error_when_search_failed() async {
+  func test_get_error_when_search_failed() async {
     let store = TestStore(
       initialState: RepoSearch.State(),
       reducer: RepoSearch()

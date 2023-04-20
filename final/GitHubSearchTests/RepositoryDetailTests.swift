@@ -6,7 +6,7 @@ import ComposableArchitecture
 
 @MainActor
 final class RepositoryDetailTests: XCTestCase {
-  func test_user_get_unstarred_repo_detail_when_load_successed() async throws {
+  func test_get_unstarred_repo_detail_when_load_successed() async throws {
     let store = TestStore(
       initialState: RepoDetail.State(
         fullname: RepositoryDetailModel.mock.fullname,
@@ -29,14 +29,16 @@ final class RepositoryDetailTests: XCTestCase {
 
     await store.receive(.starring(.checkIfStarred)) {
       $0.loadingState = .loading
+      $0.starring.loadingState = .loading
     }
 
     await store.receive(.starring(.checkStarredCompleted(.success(false)))) {
       $0.loadingState = .loaded
+      $0.starring.loadingState = .loaded
     }
   }
 
-  func test_user_get_starred_repo_detail_when_load_successed() async throws {
+  func test_get_starred_repo_detail_when_load_successed() async throws {
     let store = TestStore(
       initialState: RepoDetail.State(
         fullname: RepositoryDetailModel.mock.fullname,
@@ -59,15 +61,17 @@ final class RepositoryDetailTests: XCTestCase {
 
     await store.receive(.starring(.checkIfStarred)) {
       $0.loadingState = .loading
+      $0.starring.loadingState = .loading
     }
 
     await store.receive(.starring(.checkStarredCompleted(.success(true)))) {
       $0.loadingState = .loaded
+      $0.starring.loadingState = .loaded
       $0.starring.isStarred = true
     }
   }
 
-  func test_user_get_error_when_load_detail_failed() async throws {
+  func test_get_error_when_load_detail_failed() async throws {
     let store = TestStore(
       initialState: RepoDetail.State(
         fullname: RepositoryDetailModel.mock.fullname,
@@ -90,15 +94,17 @@ final class RepositoryDetailTests: XCTestCase {
 
     await store.receive(.starring(.checkIfStarred)) {
       $0.loadingState = .loading
+      $0.starring.loadingState = .loading
     }
 
     await store.receive(.starring(.checkStarredCompleted(.success(true)))) {
       $0.loadingState = .loaded
+      $0.starring.loadingState = .loaded
       $0.starring.isStarred = true
     }
   }
 
-  func test_user_get_error_when_check_starred_failed() async throws {
+  func test_get_error_when_check_starred_failed() async throws {
     let store = TestStore(
       initialState: RepoDetail.State(
         fullname: RepositoryDetailModel.mock.fullname,
@@ -121,10 +127,12 @@ final class RepositoryDetailTests: XCTestCase {
 
     await store.receive(.starring(.checkIfStarred)) {
       $0.loadingState = .loading
+      $0.starring.loadingState = .loading
     }
 
     await store.receive(.starring(.checkStarredCompleted(.failure(APIError.invalidResponse)))) {
       $0.loadingState = .failed
+      $0.starring.loadingState = .failed
     }
   }
 }

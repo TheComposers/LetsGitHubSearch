@@ -6,3 +6,11 @@ struct StarredListModel: Sendable, Decodable, Equatable {
     case fullname = "full_name"
   }
 }
+
+extension StarredListModel {
+  static let mock = [
+    StarredListModel(fullname: "apple/Swift"),
+    StarredListModel(fullname: "0xq0h3/DynamicRender"),
+    StarredListModel(fullname: "pointfreeco/swiftui-navigation")
+  ]
+}
