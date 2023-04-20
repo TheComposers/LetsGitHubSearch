@@ -20,6 +20,7 @@
 		ECC8145F29334CB70038A09F /* RepoSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8145B29334CB70038A09F /* RepoSearchView.swift */; };
 		FF07BA4529EFCF1500CE046C /* StarringClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07BA4429EFCF1500CE046C /* StarringClient.swift */; };
 		FF07BA4729EFD5A700CE046C /* Starring.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07BA4629EFD5A700CE046C /* Starring.swift */; };
+		FF07BA4A29F140A100CE046C /* StarringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07BA4929F140A100CE046C /* StarringTests.swift */; };
 		FF11D21E29EEC4F700AC0412 /* StargazerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D21D29EEC4F700AC0412 /* StargazerClient.swift */; };
 		FF11D22029EECA9C00AC0412 /* HTTPClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D21F29EECA9C00AC0412 /* HTTPClientProtocol.swift */; };
 		FF11D22229EECAD200AC0412 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22129EECAD200AC0412 /* HTTPMethod.swift */; };
@@ -73,6 +74,7 @@
 		ECC8145B29334CB70038A09F /* RepoSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSearchView.swift; sourceTree = "<group>"; };
 		FF07BA4429EFCF1500CE046C /* StarringClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarringClient.swift; sourceTree = "<group>"; };
 		FF07BA4629EFD5A700CE046C /* Starring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starring.swift; sourceTree = "<group>"; };
+		FF07BA4929F140A100CE046C /* StarringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarringTests.swift; sourceTree = "<group>"; };
 		FF11D21D29EEC4F700AC0412 /* StargazerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerClient.swift; sourceTree = "<group>"; };
 		FF11D21F29EECA9C00AC0412 /* HTTPClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientProtocol.swift; sourceTree = "<group>"; };
 		FF11D22129EECAD200AC0412 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				ECC8143829334AE00038A09F /* RepositoryTests.swift */,
 				FFFF0B7C29EEBD9D005830E8 /* RepositoryDetailTests.swift */,
 				FF11D23A29EED17C00AC0412 /* StargazerTests.swift */,
+				FF07BA4929F140A100CE046C /* StarringTests.swift */,
 			);
 			path = GitHubSearchTests;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				FFFF0B7D29EEBD9D005830E8 /* RepositoryDetailTests.swift in Sources */,
 				ECC8143929334AE00038A09F /* RepositoryTests.swift in Sources */,
 				FF11D23B29EED17C00AC0412 /* StargazerTests.swift in Sources */,
+				FF07BA4A29F140A100CE046C /* StarringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

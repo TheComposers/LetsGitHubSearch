@@ -40,12 +40,28 @@ struct RepoDetail: ReducerProtocol {
         return .none
 
       case let .dataLoaded(.failure(error)):
-        print(error)
         state.loadingState = .failed
+        state.searchResult = nil
+        print(error)
         return .none
 
-      case .starring:
-        return .none
+      case let .starring(action):
+        switch action {
+        case .checkStarredCompleted(.success):
+          state.loadingState = .loaded
+          return .none
+          
+        case .checkStarredCompleted(.failure):
+          state.loadingState = .failed
+          return .none
+
+        case .checkIfStarred:
+          state.loadingState = .loading
+          return .none
+
+        case .binding, .toggleStarCompleted:
+          return .none
+        }
       }
     }
 
