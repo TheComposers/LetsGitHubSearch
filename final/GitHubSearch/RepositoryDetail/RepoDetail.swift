@@ -7,11 +7,13 @@ struct RepoDetail: ReducerProtocol {
     let fullname: String
     var searchResult: RepositoryDetailModel?
     var loadingState = LoadingState.initial
+    var starring = Starring.State()
   }
 
   enum Action: Equatable {
     case loadRepoDetail
     case dataLoaded(TaskResult<RepositoryDetailModel>)
+    case starring(Starring.Action)
   }
 
   @Dependency(\.repoDetailClient) var repoDetailClient
@@ -21,19 +23,34 @@ struct RepoDetail: ReducerProtocol {
       switch action {
       case .loadRepoDetail:
         state.loadingState = .loading
-        return EffectTask.run { [fullname = state.fullname] send in
-          let result = await TaskResult { try await repoDetailClient.loadRepoDetail(fullname) }
-          await send(.dataLoaded(result))
-        }
+
+        return EffectTask.merge(
+          .run { [fullname = state.fullname] send in
+            let result = await TaskResult { try await repoDetailClient.loadRepoDetail(fullname) }
+            await send(.dataLoaded(result))
+          },
+          .run { send in
+            await send(.starring(.checkIfStarred))
+          }
+        )
+
       case let .dataLoaded(.success(result)):
         state.loadingState = .loaded
         state.searchResult = result
         return .none
 
-      case .dataLoaded(.failure):
+      case let .dataLoaded(.failure(error)):
+        print(error)
         state.loadingState = .failed
         return .none
+
+      case .starring:
+        return .none
       }
+    }
+
+    Scope(state: \.starring, action: /Action.starring) {
+      Starring()._printChanges()
     }
   }
 }

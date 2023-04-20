@@ -11,7 +11,7 @@ struct Stargazer: ReducerProtocol {
 
   enum Action: Equatable {
     case loadStarredList
-    case dataLoaded(TaskResult<[StargazerListModel]>)
+    case starredListLoaded(TaskResult<[StarredListModel]>)
   }
 
   @Dependency(\.stargazerClient) var stargazerClient
@@ -24,14 +24,15 @@ struct Stargazer: ReducerProtocol {
 
         return EffectTask.run { [username = state.username] send in
           let result = await TaskResult { try await stargazerClient.loadStarredList(username) }
-          await send(.dataLoaded(result))
+          await send(.starredListLoaded(result))
         }
-      case let .dataLoaded(.success(result)):
+
+      case let .starredListLoaded(.success(result)):
         state.loadingState = .loaded
         state.searchResult = result.map { $0.fullname }
         return .none
 
-      case let .dataLoaded(.failure(error)):
+      case let .starredListLoaded(.failure(error)):
         state.loadingState = .failed
         print(error)
         return .none
