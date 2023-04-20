@@ -1,6 +1,7 @@
 import Foundation
 
 import ComposableArchitecture
+import Factory
 
 struct StarringClient {
   var checkStarred: (String) async throws -> Bool
@@ -19,7 +20,9 @@ extension StarringClient: DependencyKey {
   static let liveValue = StarringClient(
     checkStarred: { fullname in
       let path = APIEndpoints.baseURL + APIEndpoints.star(fullname)
-      let (_, response) = try await HTTPClient.liveValue
+      let httpClient = Container.shared.httpClient()
+
+      let (_, response) = try await httpClient
         .request(method: .get, path, requiredAuth: true)
       guard let httpResponse = response as? HTTPURLResponse else {
         throw APIError.invalidResponse
@@ -34,7 +37,9 @@ extension StarringClient: DependencyKey {
     },
     star: { fullname in
       let path = APIEndpoints.baseURL + APIEndpoints.star(fullname)
-      let (_, response) = try await HTTPClient.liveValue
+      let httpClient = Container.shared.httpClient()
+
+      let (_, response) = try await httpClient
         .request(method: .put, path, requiredAuth: true)
 
       guard let httpResponse = response as? HTTPURLResponse,
@@ -45,7 +50,9 @@ extension StarringClient: DependencyKey {
     },
     unstar: { fullname in
       let path = APIEndpoints.baseURL + APIEndpoints.star(fullname)
-      let (_, response) = try await HTTPClient.liveValue
+      let httpClient = Container.shared.httpClient()
+
+      let (_, response) = try await httpClient
         .request(method: .delete, path, requiredAuth: true)
       guard let httpResponse = response as? HTTPURLResponse,
       httpResponse.statusCode == 204 else {

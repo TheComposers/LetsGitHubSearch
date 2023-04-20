@@ -1,6 +1,7 @@
 import Foundation
 
 import ComposableArchitecture
+import Factory
 
 struct RepoDetailClient {
   var loadRepoDetail: @Sendable (String) async throws -> RepositoryDetailModel
@@ -17,8 +18,9 @@ extension RepoDetailClient: DependencyKey {
   static let liveValue = RepoDetailClient(
     loadRepoDetail: { fullname in
       let path = APIEndpoints.baseURL + APIEndpoints.repoDetail + "/" + fullname
+      let httpClient = Container.shared.httpClient()
 
-      return try await HTTPClient.liveValue
+      return try await httpClient
         .request(method: .get, path, requiredAuth: true, of: RepositoryDetailModel.self)
     }
   )

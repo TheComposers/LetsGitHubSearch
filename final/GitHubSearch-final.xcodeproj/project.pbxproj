@@ -21,11 +21,13 @@
 		FF07BA4529EFCF1500CE046C /* StarringClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07BA4429EFCF1500CE046C /* StarringClient.swift */; };
 		FF07BA4729EFD5A700CE046C /* Starring.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07BA4629EFD5A700CE046C /* Starring.swift */; };
 		FF07BA4A29F140A100CE046C /* StarringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07BA4929F140A100CE046C /* StarringTests.swift */; };
+		FF07BA4C29F15A4000CE046C /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07BA4B29F15A4000CE046C /* HTTPClientTests.swift */; };
+		FF07BA5029F15B5500CE046C /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07BA4F29F15B5500CE046C /* MockURLSession.swift */; };
+		FF07BA5229F160DE00CE046C /* URLSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07BA5129F160DE00CE046C /* URLSessionTests.swift */; };
 		FF11D21E29EEC4F700AC0412 /* StargazerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D21D29EEC4F700AC0412 /* StargazerClient.swift */; };
 		FF11D22029EECA9C00AC0412 /* HTTPClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D21F29EECA9C00AC0412 /* HTTPClientProtocol.swift */; };
 		FF11D22229EECAD200AC0412 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22129EECAD200AC0412 /* HTTPMethod.swift */; };
-		FF11D22429EECB5A00AC0412 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22329EECB5A00AC0412 /* HTTPClient.swift */; };
-		FF11D22629EECB6500AC0412 /* LiveHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22529EECB6500AC0412 /* LiveHTTPClient.swift */; };
+		FF11D22629EECB6500AC0412 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22529EECB6500AC0412 /* HTTPClient.swift */; };
 		FF11D22929EECBB000AC0412 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = FF11D22829EECBB000AC0412 /* Factory */; };
 		FF11D22B29EECBDC00AC0412 /* FactoryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22A29EECBDC00AC0412 /* FactoryContainer.swift */; };
 		FF11D22D29EECBFC00AC0412 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF11D22C29EECBFC00AC0412 /* URLSessionProtocol.swift */; };
@@ -75,11 +77,13 @@
 		FF07BA4429EFCF1500CE046C /* StarringClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarringClient.swift; sourceTree = "<group>"; };
 		FF07BA4629EFD5A700CE046C /* Starring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starring.swift; sourceTree = "<group>"; };
 		FF07BA4929F140A100CE046C /* StarringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarringTests.swift; sourceTree = "<group>"; };
+		FF07BA4B29F15A4000CE046C /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
+		FF07BA4F29F15B5500CE046C /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		FF07BA5129F160DE00CE046C /* URLSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionTests.swift; sourceTree = "<group>"; };
 		FF11D21D29EEC4F700AC0412 /* StargazerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerClient.swift; sourceTree = "<group>"; };
 		FF11D21F29EECA9C00AC0412 /* HTTPClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientProtocol.swift; sourceTree = "<group>"; };
 		FF11D22129EECAD200AC0412 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		FF11D22329EECB5A00AC0412 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		FF11D22529EECB6500AC0412 /* LiveHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveHTTPClient.swift; sourceTree = "<group>"; };
+		FF11D22529EECB6500AC0412 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FF11D22A29EECBDC00AC0412 /* FactoryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryContainer.swift; sourceTree = "<group>"; };
 		FF11D22C29EECBFC00AC0412 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		FF11D22F29EECC1F00AC0412 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -151,7 +155,6 @@
 				ECC8142729334ADF0038A09F /* GitHubSearchApp.swift */,
 				FF11D22A29EECBDC00AC0412 /* FactoryContainer.swift */,
 				FFFF0B4A29ED3F49005830E8 /* LoadingState.swift */,
-				FF11D22C29EECBFC00AC0412 /* URLSessionProtocol.swift */,
 				FFFF0B6829EEB185005830E8 /* RootView.swift */,
 				FFFF0B7829EEB70C005830E8 /* AppConfig.swift */,
 				FF11D23729EECC8400AC0412 /* Network */,
@@ -176,10 +179,13 @@
 		ECC8143729334AE00038A09F /* GitHubSearchTests */ = {
 			isa = PBXGroup;
 			children = (
+				FF07BA4D29F15B4600CE046C /* Sources */,
 				ECC8143829334AE00038A09F /* RepositoryTests.swift */,
 				FFFF0B7C29EEBD9D005830E8 /* RepositoryDetailTests.swift */,
 				FF11D23A29EED17C00AC0412 /* StargazerTests.swift */,
 				FF07BA4929F140A100CE046C /* StarringTests.swift */,
+				FF07BA4B29F15A4000CE046C /* HTTPClientTests.swift */,
+				FF07BA5129F160DE00CE046C /* URLSessionTests.swift */,
 			);
 			path = GitHubSearchTests;
 			sourceTree = "<group>";
@@ -215,6 +221,22 @@
 			path = Starring;
 			sourceTree = "<group>";
 		};
+		FF07BA4D29F15B4600CE046C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FF07BA4E29F15B4C00CE046C /* Mocks */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FF07BA4E29F15B4C00CE046C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FF07BA4F29F15B5500CE046C /* MockURLSession.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		FF11D22E29EECC1800AC0412 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,9 +252,9 @@
 			children = (
 				FF11D23829EECC9800AC0412 /* Errors */,
 				FF11D23929EECCA200AC0412 /* NetworkElements */,
+				FF11D22C29EECBFC00AC0412 /* URLSessionProtocol.swift */,
 				FF11D21F29EECA9C00AC0412 /* HTTPClientProtocol.swift */,
-				FF11D22329EECB5A00AC0412 /* HTTPClient.swift */,
-				FF11D22529EECB6500AC0412 /* LiveHTTPClient.swift */,
+				FF11D22529EECB6500AC0412 /* HTTPClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -396,7 +418,6 @@
 				ECC8145C29334CB70038A09F /* RepoSearchClient.swift in Sources */,
 				FF11D22D29EECBFC00AC0412 /* URLSessionProtocol.swift in Sources */,
 				FFFF0B7929EEB70C005830E8 /* AppConfig.swift in Sources */,
-				FF11D22429EECB5A00AC0412 /* HTTPClient.swift in Sources */,
 				FFFF0B6B29EEB1EC005830E8 /* StargazerView.swift in Sources */,
 				FFFF0B4B29ED3F49005830E8 /* LoadingState.swift in Sources */,
 				FFFF0B7329EEB4F1005830E8 /* RepoDetailView.swift in Sources */,
@@ -416,7 +437,7 @@
 				FF11D22B29EECBDC00AC0412 /* FactoryContainer.swift in Sources */,
 				FFFF0B7B29EEB7AE005830E8 /* RepositoryDetailModel.swift in Sources */,
 				FFFF0B8329EEC46E005830E8 /* StarredListModel.swift in Sources */,
-				FF11D22629EECB6500AC0412 /* LiveHTTPClient.swift in Sources */,
+				FF11D22629EECB6500AC0412 /* HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +445,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF07BA5029F15B5500CE046C /* MockURLSession.swift in Sources */,
+				FF07BA5229F160DE00CE046C /* URLSessionTests.swift in Sources */,
+				FF07BA4C29F15A4000CE046C /* HTTPClientTests.swift in Sources */,
 				FFFF0B7D29EEBD9D005830E8 /* RepositoryDetailTests.swift in Sources */,
 				ECC8143929334AE00038A09F /* RepositoryTests.swift in Sources */,
 				FF11D23B29EED17C00AC0412 /* StargazerTests.swift in Sources */,

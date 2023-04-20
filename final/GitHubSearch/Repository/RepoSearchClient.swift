@@ -1,6 +1,7 @@
 import Foundation
 
 import ComposableArchitecture
+import Factory
 import XCTestDynamicOverlay
 
 struct RepoSearchClient {
@@ -20,8 +21,9 @@ extension RepoSearchClient: DependencyKey {
   static let liveValue = RepoSearchClient(
     search: { keyword in
       let path = APIEndpoints.baseURL + APIEndpoints.repoSearch
+      let httpClient = Container.shared.httpClient()
 
-      return try await HTTPClient.liveValue
+      return try await httpClient
         .request(method: .get, path, parameter: ["q": keyword], of: RepositoryModel.self)
     }
   )

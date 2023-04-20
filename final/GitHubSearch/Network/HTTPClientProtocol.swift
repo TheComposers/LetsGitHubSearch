@@ -10,12 +10,13 @@ public protocol HTTPClientProtocol {
     of type: T.Type
   ) async throws -> T
 
+  @discardableResult
   func request(
     method: HTTPMethod,
     _ path: String,
     parameter: [String: String],
     requiredAuth: Bool
-  ) async throws
+  ) async throws -> (Data, URLResponse)
 }
 
 // extension for using default parameter
@@ -31,12 +32,13 @@ extension HTTPClientProtocol {
     try await self.request(method: method, path, parameter: parameter, requiredAuth: requiredAuth, of: type)
   }
 
+  @discardableResult
   func request(
     method: HTTPMethod,
     _ path: String,
     parameter: [String: String] = [:],
     requiredAuth: Bool = false
-  ) async throws {
+  ) async throws -> (Data, URLResponse) {
     try await self.request(method: method, path, parameter: parameter, requiredAuth: requiredAuth)
   }
 }
