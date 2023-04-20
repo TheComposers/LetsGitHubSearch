@@ -21,7 +21,10 @@ struct RepoSearchView: View {
                   destination: {
                     RepoDetailView(
                       store: Store(
-                        initialState: RepoDetail.State(fullname: repo),
+                        initialState: RepoDetail.State(
+                          fullname: repo,
+                          starring: Starring.State(fullname: repo)
+                        ),
                         reducer: RepoDetail()
                       )
                     )

@@ -3,7 +3,7 @@ import Foundation
 import ComposableArchitecture
 
 struct StargazerClient {
-  var loadStarredList: @Sendable (String) async throws -> [StargazerListModel]
+  var loadStarredList: @Sendable (String) async throws -> [StarredListModel]
 }
 
 extension DependencyValues {
@@ -17,9 +17,8 @@ extension StargazerClient: DependencyKey {
   static let liveValue = StargazerClient(
     loadStarredList: { username in
       let path = APIEndpoints.baseURL + APIEndpoints.starredList("bbvch13531")
-
       return try await HTTPClient.liveValue
-        .request(method: .get, path, of: [StargazerListModel].self)
+        .request(method: .get, path, of: [StarredListModel].self)
     }
   )
 }

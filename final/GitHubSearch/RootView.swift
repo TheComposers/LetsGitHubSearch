@@ -18,7 +18,7 @@ struct RootView: View {
       StargazerView(
         store: Store(
           initialState: Stargazer.State(),
-          reducer: Stargazer()
+          reducer: Stargazer()._printChanges()
         )
       )
       .tabItem {

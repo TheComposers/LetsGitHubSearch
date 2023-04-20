@@ -36,16 +36,3 @@ extension RepoSearchClient: TestDependencyKey {
     search: unimplemented("\(Self.self).search")
   )
 }
-
-// Workshop 진행 중에 임시로 활용할 코드
-//
-//func sampleSearchRequest(keyword: String, send: Send<RepoSearch.Action>) async throws {
-//  guard let url = URL(string: "https://api.github.com/search/repositories?q=\(keyword)") else {
-//    await send(RepoSearch.Action.dataLoaded(.failure(APIError.invalidUrlError)))
-//    return
-//  }
-//  let (data, _) = try await URLSession.shared.data(from: url)
-//  let result = await TaskResult { try JSONDecoder().decode(RepositoryModel.self, from: data) }
-//
-//  await send(RepoSearch.Action.dataLoaded(result))
-//}

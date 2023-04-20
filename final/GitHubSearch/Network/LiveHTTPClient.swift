@@ -7,6 +7,7 @@ import Factory
 final class HTTPClient: HTTPClientProtocol {
   @Injected(\.session) var session
 
+  @discardableResult
   public func request<T: Decodable>(
     method: HTTPMethod,
     _ path: String,
@@ -14,6 +15,19 @@ final class HTTPClient: HTTPClientProtocol {
     requiredAuth: Bool,
     of type: T.Type
   ) async throws -> T {
+    let (data, response) = try await self.request(method: method, path, parameter: parameter, requiredAuth: requiredAuth)
+    try response.validateStatus()
+
+    return try data.decodableData(of: type)
+  }
+  
+  @discardableResult
+  func request(
+    method: HTTPMethod,
+    _ path: String,
+    parameter: [String: String] = [:],
+    requiredAuth: Bool = false
+  ) async throws -> (Data, URLResponse) {
     guard var component = URLComponents(string: path.queryEncoding()) else {
       throw APIError.invalidURL(path)
     }
@@ -35,9 +49,6 @@ final class HTTPClient: HTTPClientProtocol {
     request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
     request.setValue("2022-11-28", forHTTPHeaderField: "X-GitHub-Api-Version")
 
-    let (data, response) = try await session.data(for: request)
-    try response.validateStatus()
-
-    return try data.decodableData(of: type)
+    return try await session.data(for: request)
   }
 }

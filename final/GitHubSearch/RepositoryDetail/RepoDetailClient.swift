@@ -16,7 +16,7 @@ extension DependencyValues {
 extension RepoDetailClient: DependencyKey {
   static let liveValue = RepoDetailClient(
     loadRepoDetail: { fullname in
-      let path = APIEndpoints.baseURL + APIEndpoints.repoDetail + fullname
+      let path = APIEndpoints.baseURL + APIEndpoints.repoDetail + "/" + fullname
 
       return try await HTTPClient.liveValue
         .request(method: .get, path, requiredAuth: true, of: RepositoryDetailModel.self)
