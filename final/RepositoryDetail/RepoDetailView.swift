@@ -2,10 +2,10 @@ import SwiftUI
 
 import ComposableArchitecture
 
-struct RepoDetailView: View {
-  let store: StoreOf<RepoDetail>
+public struct RepoDetailView: View {
+  public let store: StoreOf<RepoDetail>
 
-  var body: some View {
+  public var body: some View {
     VStack {
       WithViewStore(store) { viewStore in
         VStack {
@@ -30,6 +30,10 @@ struct RepoDetailView: View {
       }
     }
   }
+
+  public init(store: StoreOf<RepoDetail>) {
+    self.store = store
+  }
 }
 
 struct ToggleButton: View {
@@ -52,7 +56,7 @@ struct ToggleButton: View {
   }
 }
 struct RepoDetailView_Previews: PreviewProvider {
-  static var previews: some View {
+  public static var previews: some View {
     RepoDetailView(
       store: Store(
         initialState: RepoDetail.State(fullname: ""),

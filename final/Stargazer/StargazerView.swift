@@ -2,10 +2,14 @@ import SwiftUI
 
 import ComposableArchitecture
 
-struct StargazerView: View {
-  let store: StoreOf<Stargazer>
+import Starring
+import RepositoryDetail
+import RepositorySearch
 
-  var body: some View {
+public struct StargazerView: View {
+  public let store: StoreOf<Stargazer>
+
+  public var body: some View {
     WithViewStore(store) { viewStore in
       NavigationView {
         List {
@@ -32,6 +36,10 @@ struct StargazerView: View {
         }
       }
     }
+  }
+
+  public init(store: StoreOf<Stargazer>) {
+    self.store = store
   }
 }
 

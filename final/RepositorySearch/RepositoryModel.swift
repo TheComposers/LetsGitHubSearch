@@ -1,8 +1,8 @@
-struct RepositoryModel: Decodable, Equatable, Sendable {
-  var items: [Result]
+public struct RepositoryModel: Decodable, Equatable, Sendable {
+  public var items: [Result]
   
-  struct Result: Decodable, Equatable, Sendable {
-    var fullname: String
+  public struct Result: Decodable, Equatable, Sendable {
+    public var fullname: String
     
     enum CodingKeys: String, CodingKey {
       case fullname = "full_name"
@@ -13,7 +13,7 @@ struct RepositoryModel: Decodable, Equatable, Sendable {
 // MARK: - Mock data
 
 extension RepositoryModel {
-  static let mock = Self(
+  public static let mock = Self(
     items: [
       RepositoryModel.Result(fullname: "Swift"),
       RepositoryModel.Result(fullname: "SwiftyJSON"),

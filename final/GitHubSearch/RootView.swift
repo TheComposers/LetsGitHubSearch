@@ -1,6 +1,8 @@
 import SwiftUI
 
 import ComposableArchitecture
+import Stargazer
+import RepositorySearch
 
 struct RootView: View {
   var body: some View {

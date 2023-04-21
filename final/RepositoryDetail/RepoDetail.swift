@@ -2,15 +2,29 @@ import Foundation
 
 import ComposableArchitecture
 import Core
-struct RepoDetail: ReducerProtocol {
-  struct State: Equatable {
-    let fullname: String
-    var searchResult: RepositoryDetailModel?
-    var loadingState = LoadingState.initial
-    var starring = Starring.State()
+import Starring
+
+public struct RepoDetail: ReducerProtocol {
+  public struct State: Equatable {
+    public let fullname: String
+    public var searchResult: RepositoryDetailModel?
+    public var loadingState = LoadingState.initial
+    public var starring = Starring.State()
+
+    public init(
+      fullname: String,
+      searchResult: RepositoryDetailModel? = nil,
+      loadingState: LoadingState = .initial,
+      starring: Starring.State = Starring.State()
+    ) {
+      self.fullname = fullname
+      self.searchResult = searchResult
+      self.loadingState = loadingState
+      self.starring = starring
+    }
   }
 
-  enum Action: Equatable {
+  public enum Action: Equatable {
     case loadRepoDetail
     case dataLoaded(TaskResult<RepositoryDetailModel>)
     case starring(Starring.Action)
@@ -18,7 +32,7 @@ struct RepoDetail: ReducerProtocol {
 
   @Dependency(\.repoDetailClient) var repoDetailClient
 
-  var body: some ReducerProtocol<State, Action> {
+  public var body: some ReducerProtocol<State, Action> {
     Reduce { state, action in
       switch action {
       case .loadRepoDetail:
@@ -69,4 +83,5 @@ struct RepoDetail: ReducerProtocol {
       Starring()._printChanges()
     }
   }
+  public init() {}
 }

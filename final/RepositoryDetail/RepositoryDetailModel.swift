@@ -1,11 +1,11 @@
 import Foundation
 
-struct RepositoryDetailModel: Sendable, Decodable, Equatable {
-  let fullname: String
-  let ownerName: String
-  let ownerUserThumbnail: String
-  let starCount: Int
-  let forkCount: Int
+public struct RepositoryDetailModel: Sendable, Decodable, Equatable {
+  public let fullname: String
+  public let ownerName: String
+  public let ownerUserThumbnail: String
+  public let starCount: Int
+  public let forkCount: Int
   
   enum CodingKeys: String, CodingKey {
     case fullname = "full_name"
@@ -16,7 +16,7 @@ struct RepositoryDetailModel: Sendable, Decodable, Equatable {
     case forkCount = "forks_count"
   }
   
-  init(
+  public init(
     fullname: String,
     ownerName: String,
     ownerUserThumbnail: String,
@@ -30,7 +30,7 @@ struct RepositoryDetailModel: Sendable, Decodable, Equatable {
     self.forkCount = forkCount
   }
   
-  init(from decoder: Decoder) throws {
+  public init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     self.fullname = try container.decode(String.self, forKey: .fullname)
     
@@ -43,7 +43,7 @@ struct RepositoryDetailModel: Sendable, Decodable, Equatable {
   }
 }
 
-extension RepositoryDetailModel {
+public extension RepositoryDetailModel {
   static let mock = RepositoryDetailModel(
     fullname: "apple/Swift",
     ownerName: "apple",

@@ -4,6 +4,7 @@ import ComposableArchitecture
 import Factory
 
 import Core
+import Starring
 
 struct StargazerClient {
   var loadStarredList: @Sendable (String) async throws -> [StarredListModel]

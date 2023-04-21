@@ -2,14 +2,21 @@ import Foundation
 
 import ComposableArchitecture
 import Core
-struct Starring: ReducerProtocol {
-  struct State: Equatable {
-    @BindableState var isStarred = false
-    var fullname = ""
-    var loadingState = LoadingState.initial
+
+public struct Starring: ReducerProtocol {
+  public struct State: Equatable {
+    @BindableState public var isStarred = false
+    public var fullname = ""
+    public var loadingState = LoadingState.initial
+
+    public init(isStarred: Bool = false, fullname: String = "", loadingState: LoadingState = LoadingState.initial) {
+      self.isStarred = isStarred
+      self.fullname = fullname
+      self.loadingState = loadingState
+    }
   }
 
-  enum Action: Equatable, BindableAction {
+  public enum Action: Equatable, BindableAction {
     case binding(BindingAction<State>)
     case toggleStarCompleted(TaskResult<String>)
     case checkIfStarred
@@ -18,7 +25,7 @@ struct Starring: ReducerProtocol {
 
   @Dependency(\.starringClient) var starringClient
 
-  var body: some ReducerProtocol<State, Action> {
+  public var body: some ReducerProtocol<State, Action> {
     BindingReducer()
 
     Reduce { state, action in
@@ -63,4 +70,5 @@ struct Starring: ReducerProtocol {
       }
     }
   }
+  public init() { }
 }

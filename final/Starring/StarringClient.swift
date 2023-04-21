@@ -5,10 +5,10 @@ import Factory
 
 import Core
 
-struct StarringClient {
-  var checkStarred: (String) async throws -> Bool
-  var star: (String) async throws -> String
-  var unstar: (String) async throws -> String
+public struct StarringClient {
+  public var checkStarred: (String) async throws -> Bool
+  public var star: (String) async throws -> String
+  public var unstar: (String) async throws -> String
 }
 
 extension DependencyValues {
@@ -19,7 +19,7 @@ extension DependencyValues {
 }
 
 extension StarringClient: DependencyKey {
-  static let liveValue = StarringClient(
+  public static let liveValue = StarringClient(
     checkStarred: { fullname in
       let path = APIEndpoints.baseURL + APIEndpoints.star(fullname)
       let httpClient = Container.shared.httpClient()
@@ -65,13 +65,13 @@ extension StarringClient: DependencyKey {
   )
 }
 extension StarringClient: TestDependencyKey {
-  static let previewValue = StarringClient(
+  public static let previewValue = StarringClient(
     checkStarred: { _ in true },
     star: { _ in UUID().uuidString },
     unstar: { _ in UUID().uuidString }
   )
 
-  static let testValue = Self(
+  public static let testValue = Self(
     checkStarred: unimplemented("\(Self.self).checkStarred"),
     star: unimplemented("\(Self.self).star"),
     unstar: unimplemented("\(Self.self).unstar")

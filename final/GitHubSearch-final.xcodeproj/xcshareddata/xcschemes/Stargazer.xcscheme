@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FFF6EE5A29F16ACC003B5E25"
-               BuildableName = "Stargazer.framework"
+               BlueprintIdentifier = "FFA2ABFC29F2AF710041C113"
+               BuildableName = "libStargazer.a"
                BlueprintName = "Stargazer"
                ReferencedContainer = "container:GitHubSearch-final.xcodeproj">
             </BuildableReference>
@@ -50,8 +50,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FFF6EE5A29F16ACC003B5E25"
-            BuildableName = "Stargazer.framework"
+            BlueprintIdentifier = "FFA2ABFC29F2AF710041C113"
+            BuildableName = "libStargazer.a"
             BlueprintName = "Stargazer"
             ReferencedContainer = "container:GitHubSearch-final.xcodeproj">
          </BuildableReference>

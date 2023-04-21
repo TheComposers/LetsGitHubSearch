@@ -1,14 +1,28 @@
 import ComposableArchitecture
+
 import Core
-struct RepoSearch: ReducerProtocol {
-  struct State: Equatable {
-    @BindingState var keyword = ""
-    var searchResults = [String]()
-    var loadingState = LoadingState.initial
-    var requestCount = 0
+
+public struct RepoSearch: ReducerProtocol {
+  public struct State: Equatable {
+    @BindingState public var keyword = ""
+    public var searchResults = [String]()
+    public var loadingState = LoadingState.initial
+    public var requestCount = 0
+
+    public init(
+      keyword: String = "",
+                searchResults: [String] = [],
+      loadingState: LoadingState = .initial,
+      requestCount: Int = 0
+    ) {
+      self.keyword = keyword
+      self.searchResults = searchResults
+      self.loadingState = loadingState
+      self.requestCount = requestCount
+    }
   }
 
-  enum Action: Equatable, BindableAction {
+  public enum Action: Equatable, BindableAction {
     case binding(BindingAction<State>)
     case search
     case dataLoaded(TaskResult<RepositoryModel>)
@@ -18,7 +32,7 @@ struct RepoSearch: ReducerProtocol {
   @Dependency(\.continuousClock) var clock
 
   private enum SearchDebounceId {}
-  var body: some ReducerProtocol<State, Action> {
+  public var body: some ReducerProtocol<State, Action> {
     BindingReducer()
     Reduce { state, action in
       switch action {
@@ -58,4 +72,5 @@ struct RepoSearch: ReducerProtocol {
       }
     }
   }
+  public init() { }
 }

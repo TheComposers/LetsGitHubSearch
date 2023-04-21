@@ -2,10 +2,17 @@ import SwiftUI
 
 import ComposableArchitecture
 
-struct RepoSearchView: View {
-  let store: StoreOf<RepoSearch>
+import Starring
+import RepositoryDetail
 
-  var body: some View {
+public struct RepoSearchView: View {
+  public let store: StoreOf<RepoSearch>
+
+  public init(store: StoreOf<RepoSearch>) {
+    self.store = store
+  }
+
+  public var body: some View {
     WithViewStore(self.store) { viewStore in
       NavigationView {
         Group {
@@ -44,8 +51,8 @@ struct RepoSearchView: View {
   }
 }
 
-struct RepoSearchView_Previews: PreviewProvider {
-  static var previews: some View {
+public struct RepoSearchView_Previews: PreviewProvider {
+  public static var previews: some View {
     RepoSearchView(
       store: Store(
         initialState: RepoSearch.State(),
