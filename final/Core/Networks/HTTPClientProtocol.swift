@@ -1,5 +1,4 @@
 import Foundation
-
 public protocol HTTPClientProtocol {
   @discardableResult
   func request<T: Decodable>(
@@ -33,7 +32,7 @@ extension HTTPClientProtocol {
   }
 
   @discardableResult
-  func request(
+  public func request(
     method: HTTPMethod,
     _ path: String,
     parameter: [String: String] = [:],

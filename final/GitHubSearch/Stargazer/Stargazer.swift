@@ -1,7 +1,7 @@
 import Foundation
 
 import ComposableArchitecture
-
+import Core
 struct Stargazer: ReducerProtocol {
   struct State: Equatable {
     var username = ""

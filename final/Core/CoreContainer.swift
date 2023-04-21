@@ -1,5 +1,4 @@
 import Foundation
-
 import Factory
 
 extension Container {
@@ -7,7 +6,7 @@ extension Container {
     self { URLSession.shared }
       .singleton
   }
-  var httpClient: Factory<HTTPClientProtocol> {
+  public var httpClient: Factory<HTTPClientProtocol> {
     self { HTTPClient() }
       .singleton
   }

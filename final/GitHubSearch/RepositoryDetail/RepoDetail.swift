@@ -1,7 +1,7 @@
 import Foundation
 
 import ComposableArchitecture
-
+import Core
 struct RepoDetail: ReducerProtocol {
   struct State: Equatable {
     let fullname: String

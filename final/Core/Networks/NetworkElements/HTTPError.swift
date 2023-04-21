@@ -1,6 +1,6 @@
 import Foundation
 
-enum HTTPError: Int, Error, Equatable {
+public enum HTTPError: Int, Error, Equatable {
   case badRequest           = 400
   case unauthorized         = 401
   case forbidden            = 403
@@ -13,7 +13,7 @@ enum HTTPError: Int, Error, Equatable {
   case gatewayTimeout       = 504
   case unknownHTTPError     = -1
 
-  init(fromRawValue rawValue: Int) {
+  public init(fromRawValue rawValue: Int) {
     self = HTTPError(rawValue: rawValue) ?? .unknownHTTPError
   }
 }

@@ -3,6 +3,9 @@ import Foundation
 import ComposableArchitecture
 import Factory
 
+
+import Core
+
 struct RepoDetailClient {
   var loadRepoDetail: @Sendable (String) async throws -> RepositoryDetailModel
 }

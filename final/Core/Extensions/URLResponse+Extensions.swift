@@ -1,6 +1,6 @@
 import Foundation
 
-extension URLResponse {
+public extension URLResponse {
   func validateStatus() throws {
     guard let urlResponse = self as? HTTPURLResponse else {
       throw APIError.invalidResponse

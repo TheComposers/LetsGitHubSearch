@@ -1,6 +1,6 @@
 import Foundation
 
-extension Data {
+public extension Data {
   func decodableData<T: Decodable>(of type: T.Type) throws -> T {
     let decoder = JSONDecoder()
     do {

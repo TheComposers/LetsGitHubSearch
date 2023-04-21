@@ -1,12 +1,12 @@
 import Combine
 import Foundation
 
-import ComposableArchitecture
 import Factory
 
-final class HTTPClient: HTTPClientProtocol {
+public final class HTTPClient: HTTPClientProtocol {
   @Injected(\.session) var session
 
+  public init() { }
   @discardableResult
   public func request<T: Decodable>(
     method: HTTPMethod,
@@ -22,7 +22,7 @@ final class HTTPClient: HTTPClientProtocol {
   }
   
   @discardableResult
-  func request(
+  public func request(
     method: HTTPMethod,
     _ path: String,
     parameter: [String: String] = [:],
@@ -52,3 +52,4 @@ final class HTTPClient: HTTPClientProtocol {
     return try await session.data(for: request)
   }
 }
+

@@ -1,4 +1,4 @@
-enum LoadingState {
+public enum LoadingState {
   case initial
   case loading
   case loaded

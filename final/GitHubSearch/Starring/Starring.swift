@@ -1,7 +1,7 @@
 import Foundation
 
 import ComposableArchitecture
-
+import Core
 struct Starring: ReducerProtocol {
   struct State: Equatable {
     @BindableState var isStarred = false

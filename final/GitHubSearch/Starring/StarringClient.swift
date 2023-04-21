@@ -3,6 +3,8 @@ import Foundation
 import ComposableArchitecture
 import Factory
 
+import Core
+
 struct StarringClient {
   var checkStarred: (String) async throws -> Bool
   var star: (String) async throws -> String
