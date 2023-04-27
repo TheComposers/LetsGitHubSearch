@@ -11,7 +11,7 @@ public struct RepoSearch: ReducerProtocol {
 
     public init(
       keyword: String = "",
-                searchResults: [String] = [],
+      searchResults: [String] = [],
       loadingState: LoadingState = .initial,
       requestCount: Int = 0
     ) {

@@ -1,8 +1,10 @@
 import XCTest
 
 import ComposableArchitecture
+import Factory
 
-@testable import GitHubSearch_final
+@testable import Core
+@testable import Starring
 
 @MainActor
 final class StarringTests: XCTestCase {
@@ -17,7 +19,7 @@ final class StarringTests: XCTestCase {
     await store.send(.checkIfStarred) {
       $0.loadingState = .loading
     }
-    
+
     await store.receive(.checkStarredCompleted(.success(true))) {
       $0.loadingState = .loaded
       $0.isStarred = true

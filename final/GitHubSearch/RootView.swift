@@ -1,5 +1,4 @@
 import SwiftUI
-
 import ComposableArchitecture
 import Stargazer
 import RepositorySearch

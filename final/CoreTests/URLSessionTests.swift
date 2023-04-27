@@ -1,9 +1,8 @@
 import XCTest
-
 import ComposableArchitecture
 import Factory
 
-@testable import GitHubSearch_final
+@testable import Core
 
 @MainActor
 

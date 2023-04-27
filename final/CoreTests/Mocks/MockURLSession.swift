@@ -1,5 +1,5 @@
 import Foundation
-@testable import GitHubSearch_final
+@testable import Core
 
 class MockURLSession: URLSessionProtocol {
   public var error: Error?

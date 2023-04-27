@@ -1,7 +1,5 @@
 import Foundation
-
 import Factory
-
 import Core
 
 extension Container: AutoRegistering {

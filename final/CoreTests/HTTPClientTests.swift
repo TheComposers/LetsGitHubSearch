@@ -1,9 +1,8 @@
 import XCTest
-
 import ComposableArchitecture
 import Factory
 
-@testable import GitHubSearch_final
+@testable import Core
 
 @MainActor
 final class HTTPClientTests: XCTestCase {
@@ -19,7 +18,7 @@ final class HTTPClientTests: XCTestCase {
         response: { nil }
       )
     }
-    
+
     let httpClient = HTTPClient()
     print(httpClient.session)
     let expectation = expectation(description: "expect call to throw APIError.decodingError")

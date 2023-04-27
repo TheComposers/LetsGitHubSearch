@@ -2,7 +2,9 @@ import XCTest
 
 import ComposableArchitecture
 
-@testable import GitHubSearch_final
+@testable import Stargazer
+@testable import Starring
+@testable import Core
 
 @MainActor
 final class StargazerTests: XCTestCase {

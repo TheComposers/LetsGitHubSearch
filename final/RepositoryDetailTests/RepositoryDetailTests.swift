@@ -1,8 +1,11 @@
 import XCTest
 
 import ComposableArchitecture
+import Factory
 
-@testable import GitHubSearch_final
+@testable import RepositoryDetail
+@testable import Starring
+@testable import Core
 
 @MainActor
 final class RepositoryDetailTests: XCTestCase {

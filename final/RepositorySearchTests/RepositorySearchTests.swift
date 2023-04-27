@@ -1,11 +1,14 @@
 import XCTest
-
 import ComposableArchitecture
+import Factory
 
-@testable import GitHubSearch_final
+@testable import RepositorySearch
+@testable import RepositoryDetail
+@testable import Starring
+@testable import Core
 
 @MainActor
-final class RepositoryTests: XCTestCase {
+final class RepositorySearchTests: XCTestCase {
   func test_get_repo_search_results_when_search() async {
     let store = TestStore(
       initialState: RepoSearch.State(),
